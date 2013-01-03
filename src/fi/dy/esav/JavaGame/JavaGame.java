@@ -8,9 +8,12 @@ public class JavaGame {
 	 */
 	public static void main(String[] args) {
 		GameEngine engine = new GameEngine();
-		engine.getStage().setVisible(true);
+		engine.start();
+		//engine.getStage().setVisible(true);
 
 		while(!engine.getStage().isValid()) continue;
+		
+		engine.addEntity(new TestEntity(engine));
 		
 		while(engine.getStage().isVisible()) {
 			//System.out.println(engine.getInputstate().getMouseX() + ", " + engine.getInputstate().getMouseY());
@@ -22,6 +25,8 @@ public class JavaGame {
 				e.printStackTrace();
 			}
 		}
+		
+		engine.stop();
 
 		System.out.println("Closing");
 		engine.getStage().dispose();
