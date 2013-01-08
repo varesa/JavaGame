@@ -33,6 +33,7 @@ public class GroundEntity extends Entity {
 	/**
 	 * @return the width
 	 */
+	@Override
 	public int getWidth() {
 		return width;
 	}
@@ -47,6 +48,7 @@ public class GroundEntity extends Entity {
 	/**
 	 * @return the height
 	 */
+	@Override
 	public int getHeight() {
 		return height;
 	}

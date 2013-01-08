@@ -1,11 +1,27 @@
 package fi.dy.esav.JavaGame;
 
+import java.awt.Point;
 import java.awt.Rectangle;
 
 public class World {
+	
+	static final double gravity = 10;
 	//Player, Enemies, Ai nodes, etc...
+	
+	Player player;
 
 	public void initialize() {
+		initGround();
+		
+		Point playerSpawn = new Point(20, 80);
+		player = new Player(JavaGame.getEngine());
+		player.setX(playerSpawn.x); // TODO: Implement setPos(Point p) in Entity
+		player.setY(playerSpawn.y);
+		
+		JavaGame.getEngine().addEntity(player);
+	}
+	
+	private void initGround() {
 		int stageWidth = JavaGame.getEngine().getStage().getContentPane().getWidth();
 		int stageHeight = JavaGame.getEngine().getStage().getContentPane().getHeight();
 		
