@@ -3,11 +3,14 @@ package fi.dy.esav.JavaGame;
 import fi.dy.esav.GameEngine.GameEngine;
 
 public class JavaGame {
+	
+	private static GameEngine engine;
+	
 	/**
 	 * Main method
 	 */
 	public static void main(String[] args) {
-		GameEngine engine = new GameEngine();
+		engine = new GameEngine();
 		engine.start();
 		//engine.getStage().setVisible(true);
 
@@ -30,6 +33,20 @@ public class JavaGame {
 
 		System.out.println("Closing");
 		engine.getStage().dispose();
+	}
+
+	/**
+	 * @return the engine
+	 */
+	public GameEngine getEngine() {
+		return engine;
+	}
+
+	/**
+	 * @param engine the engine to set
+	 */
+	public void setEngine(GameEngine engine) {
+		this.engine = engine;
 	}
 
 }
