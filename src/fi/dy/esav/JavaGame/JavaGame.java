@@ -16,7 +16,9 @@ public class JavaGame {
 
 		while(!engine.getStage().isValid()) continue;
 		
-		engine.addEntity(new TestEntity(engine));
+		//engine.addEntity(new TestEntity(engine));
+		World world = new World();
+		world.initialize();
 		
 		while(engine.getStage().isVisible()) {
 			//System.out.println(engine.getInputstate().getMouseX() + ", " + engine.getInputstate().getMouseY());
@@ -38,7 +40,7 @@ public class JavaGame {
 	/**
 	 * @return the engine
 	 */
-	public GameEngine getEngine() {
+	public static GameEngine getEngine() {
 		return engine;
 	}
 
