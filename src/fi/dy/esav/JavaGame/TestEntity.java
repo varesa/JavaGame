@@ -23,8 +23,6 @@ public class TestEntity extends Entity {
 	
 	@Override
 	public void draw(Graphics g) {
-		//System.out.println("drawing");
-		//System.out.println(sprite.getHeight(engine.getStage()));
 		g.drawImage(sprite, (int) x, (int) y, sprite.getWidth(engine.getStage()), sprite.getHeight(engine.getStage()), engine.getStage());
 	}
 	
