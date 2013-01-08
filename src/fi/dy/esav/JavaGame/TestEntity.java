@@ -3,6 +3,7 @@ package fi.dy.esav.JavaGame;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 
 import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
@@ -13,6 +14,8 @@ public class TestEntity extends Entity {
 	
 	private double x = 0;
 	private double y = 500;
+	
+	
 	
 	public TestEntity(GameEngine engine) {
 		super(engine);
@@ -28,7 +31,16 @@ public class TestEntity extends Entity {
 	
 	@Override
 	public void act() {
-		this.x += 0.5;
-		this.y -= 0.9;
+		if(this.engine.getInputState().isKeyDown(KeyEvent.VK_LEFT)) {
+			this.x -= 1;
+		} else if (this.engine.getInputState().isKeyDown(KeyEvent.VK_RIGHT)){
+			this.x += 1;
+		}
+		
+		if(this.engine.getInputState().isKeyDown(KeyEvent.VK_UP)) {
+			this.y -= 1;
+		} else if(this.engine.getInputState().isKeyDown(KeyEvent.VK_DOWN)) {
+			this.y += 1;
+		}
 	}
 }
