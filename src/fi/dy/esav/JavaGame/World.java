@@ -5,32 +5,38 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import fi.dy.esav.GameEngine.Entity;
+import fi.dy.esav.GameEngine.GameEngine;
 
 public class World {
 	
 	static final double gravity = 10;
+	
+	private GameEngine engine;
+	
 	//Player, Enemies, Ai nodes, etc...
 	
 	Player player;
 
 	public void initialize() {
+		engine = engine;
+		
 		initGround();
 		
 		Point playerSpawn = new Point(20, 80);
-		player = new Player(JavaGame.getEngine());
-		player.setX(playerSpawn.x); // TODO: Implement setPos(Point p) in Entity
+		player = new Player(engine);
+		player.setX(playerSpawn.x); // TODO: Implement setPos(Point p) in Entity [inmylyn]
 		player.setY(playerSpawn.y);
 		
-		JavaGame.getEngine().addEntity(player);
+		engine.addEntity(player);
 		
 		ArrayList<Point> enemySpawns = new ArrayList<Point>();
 		enemySpawns.add(new Point(500,50));
 		
 		for(Point p : enemySpawns) {
-			EnemyEntity e = new EnemyEntity(JavaGame.getEngine()); // TODO: Reduce amount of JavaGame.getEngine()'s with a variable
+			EnemyEntity e = new EnemyEntity(engine);
 			e.setX(p.getX());
 			e.setY(p.getY());
-			JavaGame.getEngine().addEntity(e);
+			engine.addEntity(e);
 		}
 		
 	}
@@ -39,8 +45,8 @@ public class World {
 	int widthUnit;
 	
 	private void initGround() {
-		int stageWidth = JavaGame.getEngine().getStage().getContentPane().getWidth();
-		int stageHeight = JavaGame.getEngine().getStage().getContentPane().getHeight();
+		int stageWidth = engine.getStage().getContentPane().getWidth();
+		int stageHeight = engine.getStage().getContentPane().getHeight();
 		
 		storyHeight = stageHeight/4;
 		widthUnit = stageWidth/16;
@@ -62,7 +68,7 @@ public class World {
 								};
 		
 		for (Rectangle rect : ground) {
-			JavaGame.getEngine().addEntity(new GroundEntity(JavaGame.getEngine(), rect));
+			engine.addEntity(new GroundEntity(engine, rect));
 		}
 	}
 	
