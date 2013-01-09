@@ -7,6 +7,8 @@ import java.awt.event.KeyEvent;
 import fi.dy.esav.GameEngine.GameEngine;
 
 public class Player extends LivingEntity {
+	
+	private Color color = Color.green;
 
 	public Player(GameEngine engine) {
 		super(engine);
@@ -14,7 +16,7 @@ public class Player extends LivingEntity {
 	
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.RED);
+		g.setColor(color);
 		g.drawRect((int)x, (int)y, 64, 64);
 	}
 	

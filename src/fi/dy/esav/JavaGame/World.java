@@ -2,6 +2,7 @@ package fi.dy.esav.JavaGame;
 
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.util.ArrayList;
 
 public class World {
 	
@@ -19,6 +20,17 @@ public class World {
 		player.setY(playerSpawn.y);
 		
 		JavaGame.getEngine().addEntity(player);
+		
+		ArrayList<Point> enemySpawns = new ArrayList<Point>();
+		enemySpawns.add(new Point(500,50));
+		
+		for(Point p : enemySpawns) {
+			EnemyEntity e = new EnemyEntity(JavaGame.getEngine()); // TODO: Reduce amount of JavaGame.getEngine()'s with a variable
+			e.setX(p.getX());
+			e.setY(p.getY());
+			JavaGame.getEngine().addEntity(e);
+		}
+		
 	}
 	
 	private void initGround() {

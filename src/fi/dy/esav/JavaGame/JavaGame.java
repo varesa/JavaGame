@@ -5,6 +5,7 @@ import fi.dy.esav.GameEngine.GameEngine;
 public class JavaGame {
 	
 	private static GameEngine engine;
+	static World world;
 	
 	/**
 	 * Main method
@@ -17,7 +18,7 @@ public class JavaGame {
 		while(!engine.getStage().isValid()) continue;
 		
 		//engine.addEntity(new TestEntity(engine));
-		World world = new World();
+		world = new World();
 		world.initialize();
 		
 		while(engine.getStage().isVisible()) {

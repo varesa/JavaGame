@@ -10,6 +10,8 @@ public class LivingEntity extends Entity {
 	protected int width = 64;
 	protected int height = 64;
 	
+	protected Color color = Color.GRAY;
+	
 	protected final double xacc = 1;
 	protected final double xdec = 2;
 
@@ -32,7 +34,7 @@ public class LivingEntity extends Entity {
 	
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.RED);
+		g.setColor(color);
 		g.drawRect((int)x, (int)y, 64, 64);
 	}
 	
@@ -59,6 +61,7 @@ public class LivingEntity extends Entity {
 		x += xvel;
 		
 		for(Entity ent : JavaGame.getEngine().getEntities()) {
+			if(!(ent instanceof GroundEntity)) break;
 			if(this.getY()+this.getHeight() > ent.getY() && this.getY() < ent.getY()+ent.getHeight()) {
 				if( this.getX()+this.getWidth() > ent.getX() && this.getX()+this.getWidth() < ent.getX()+ent.getWidth()) {
 					this.xvel = 0;
@@ -76,7 +79,7 @@ public class LivingEntity extends Entity {
 		y -= yvel;
 		
 		for(Entity ent : JavaGame.getEngine().getEntities()) {
-
+			if(!(ent instanceof GroundEntity)) break;
 			if(this.getX()+this.getWidth() > ent.getX() && this.getX() < ent.getX()+ent.getWidth()) {
 				if( this.getY()+this.getHeight() > ent.getY() && this.getY()+this.getHeight() < ent.getY()+ent.getHeight()) {
 					yvel = 0;
