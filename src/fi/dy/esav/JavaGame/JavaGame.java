@@ -52,4 +52,20 @@ public class JavaGame {
 		JavaGame.engine = engine;
 	}
 
+	/**
+	 * @return the world
+	 */
+	public static World getWorld() {
+		return world;
+	}
+
+	/**
+	 * @param world the world to set
+	 */
+	public static void setWorld(World world) {
+		JavaGame.world = world;
+	}
+	
+	
+
 }

@@ -23,8 +23,8 @@ public class EnemyEntity extends LivingEntity {
 	
 	@Override
 	public void act() {
-		xtarget = JavaGame.world.player.getX() - this.getX();
-		System.out.println(JavaGame.world.getStory(JavaGame.world.player)); // TODO: Implement JavaGame.getWorld(), and .getPlayer()
+		xtarget = JavaGame.getWorld().getPlayer().getX() - this.getX();
+		System.out.println(JavaGame.world.getStory(JavaGame.getWorld().getPlayer())); // TODO: Implement JavaGame.getWorld(), and .getPlayer() [inmylyn]
 		super.act();
 	}
 	

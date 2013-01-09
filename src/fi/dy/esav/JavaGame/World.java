@@ -15,7 +15,7 @@ public class World {
 	
 	//Player, Enemies, Ai nodes, etc...
 	
-	Player player;
+	private Player player;
 
 	public void initialize() {
 		engine = engine;
@@ -75,5 +75,19 @@ public class World {
 	public int getStory(Entity ent) {
 		int entCenter = (int) (ent.getY() + ent.getHeight()/2);
 		return (int) (3 - Math.floor(entCenter/storyHeight));
+	}
+
+	/**
+	 * @return the player
+	 */
+	public Player getPlayer() {
+		return player;
+	}
+
+	/**
+	 * @param player the player to set
+	 */
+	public void setPlayer(Player player) {
+		this.player = player;
 	}
 }
