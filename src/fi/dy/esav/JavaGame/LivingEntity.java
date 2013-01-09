@@ -63,12 +63,10 @@ public class LivingEntity extends Entity {
 				if( this.getX()+this.getWidth() > ent.getX() && this.getX()+this.getWidth() < ent.getX()+ent.getWidth()) {
 					this.xvel = 0;
 					this.x = ent.getX()-this.getWidth();
-					System.out.println("Hit right");
 				}
 				if( this.getX()-0.1 > ent.getX() && this.getX()-0.1 < ent.getX()+ent.getWidth()) {
 					this.xvel = 0;
 					this.x = ent.getX() + ent.getWidth();
-					System.out.println("Hit left");
 				}
 			}
 		}
@@ -84,12 +82,10 @@ public class LivingEntity extends Entity {
 					yvel = 0;
 					y = ent.getY()-this.getHeight();
 					collided = true;
-					System.out.println("Hit floor");
 				}
 				if( this.getY()-0.1 > ent.getY() && this.getY()-0.1 < ent.getY()+ent.getHeight()) {
 					yvel = 0;
 					y = ent.getY() + ent.getHeight()+0.1;
-					System.out.println("Hit head");
 				}
 			}
 
