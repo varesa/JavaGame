@@ -76,7 +76,6 @@ public class LivingEntity extends Entity {
 		}
 		
 		boolean collided = false;
-		boolean hitHead = false;
 		
 		y -= yvel;
 		
@@ -92,7 +91,6 @@ public class LivingEntity extends Entity {
 				if( this.getY()-0.1 > ent.getY() && this.getY()-0.1 < ent.getY()+ent.getHeight()) {
 					yvel = 0;
 					y = ent.getY() + ent.getHeight()+0.1;
-					hitHead = true;
 					System.out.println("Hit head");
 				}
 			}
