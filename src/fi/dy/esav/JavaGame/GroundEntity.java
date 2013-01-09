@@ -6,6 +6,7 @@ import java.awt.Rectangle;
 
 import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
+import fi.dy.esav.GameEngine.enums.ENTITY;
 
 public class GroundEntity extends Entity {
 	
@@ -18,6 +19,9 @@ public class GroundEntity extends Entity {
 	
 	public GroundEntity(GameEngine engine, Rectangle rect) {
 		super(engine);
+		
+		this.setProperty(ENTITY.NO_ACT);
+		
 		x = rect.x;
 		y = rect.y;
 		width = rect.width;
