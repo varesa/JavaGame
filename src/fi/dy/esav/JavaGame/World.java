@@ -4,6 +4,8 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
+import fi.dy.esav.GameEngine.Entity;
+
 public class World {
 	
 	static final double gravity = 10;
@@ -33,12 +35,15 @@ public class World {
 		
 	}
 	
+	int storyHeight;
+	int widthUnit;
+	
 	private void initGround() {
 		int stageWidth = JavaGame.getEngine().getStage().getContentPane().getWidth();
 		int stageHeight = JavaGame.getEngine().getStage().getContentPane().getHeight();
 		
-		int storyHeight = stageHeight/4;
-		int widthUnit = stageWidth/16;
+		storyHeight = stageHeight/4;
+		widthUnit = stageWidth/16;
 		
 		Rectangle[] ground = {  new Rectangle(0, 				0, 				10, 		stageHeight), 
 								new Rectangle(0, 				0, 				stageWidth, 10),
@@ -59,5 +64,10 @@ public class World {
 		for (Rectangle rect : ground) {
 			JavaGame.getEngine().addEntity(new GroundEntity(JavaGame.getEngine(), rect));
 		}
+	}
+	
+	public int getStory(Entity ent) {
+		int entCenter = (int) (ent.getY() + ent.getHeight()/2);
+		return (int) (3 - Math.floor(entCenter/storyHeight));
 	}
 }

@@ -12,8 +12,8 @@ public class LivingEntity extends Entity {
 	
 	protected Color color = Color.GRAY;
 	
-	protected double xacc = 1;
-	protected double xdec = 2;
+	protected double xacc = 1.5;
+	protected double xdec = 0.75;
 
 	protected double jumpvel = 11;
 	protected double ydec = 0.3;
@@ -29,7 +29,6 @@ public class LivingEntity extends Entity {
 	
 	public LivingEntity(GameEngine engine) {
 		super(engine);
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
