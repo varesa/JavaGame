@@ -18,7 +18,7 @@ public class World {
 	private Player player;
 
 	public void initialize() {
-		engine = engine;
+		engine = JavaGame.getEngine();
 		
 		initGround();
 		
