@@ -12,14 +12,14 @@ public class LivingEntity extends Entity {
 	
 	protected Color color = Color.GRAY;
 	
-	protected final double xacc = 1;
-	protected final double xdec = 2;
+	protected double xacc = 1;
+	protected double xdec = 2;
 
-	protected final double jumpvel = 11;
-	protected final double ydec = 0.3;
+	protected double jumpvel = 11;
+	protected double ydec = 0.3;
 	
-	protected final double maxxvel = 7;
-	protected final double maxyvel = 12;
+	protected double maxxvel = 7;
+	protected double maxyvel = 12;
 	
 	protected double xvel = 0;
 	protected double yvel = 0;
