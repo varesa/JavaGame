@@ -41,7 +41,7 @@ public class JavaGame {
 	 * @return the engine
 	 */
 	public static GameEngine getEngine() {
-		return engine;
+		return JavaGame.engine;
 	}
 
 	/**
