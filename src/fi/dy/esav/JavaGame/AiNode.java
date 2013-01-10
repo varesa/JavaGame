@@ -21,9 +21,9 @@ public class AiNode extends Entity {
 		this.y = y;
 	}
 	
-	public ArrayList<AiNode> getNodes() {
+	public static ArrayList<AiNode> getNodes() {
 		ArrayList<AiNode> nodes = new ArrayList<AiNode>();
-		for(Entity ent: engine.getEntities()) {
+		for(Entity ent: JavaGame.getEngine().getEntities()) {
 			if (ent instanceof AiNode) {
 				nodes.add((AiNode) ent);
 			}
