@@ -8,7 +8,7 @@ import fi.dy.esav.GameEngine.GameEngine;
 
 public class Player extends LivingEntity {
 	
-	private Color color = Color.green;
+	private Color color = Color.BLUE;
 
 	public Player(GameEngine engine) {
 		super(engine);
