@@ -6,11 +6,11 @@ import java.awt.event.KeyEvent;
 
 import fi.dy.esav.GameEngine.GameEngine;
 
-public class Player extends LivingEntity {
+public class PlayerEntity extends LivingEntity {
 	
 	private Color color = Color.BLUE;
 
-	public Player(GameEngine engine) {
+	public PlayerEntity(GameEngine engine) {
 		super(engine);
 	}
 	

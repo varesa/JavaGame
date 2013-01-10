@@ -15,7 +15,7 @@ public class World {
 	
 	//Player, Enemies, Ai nodes, etc...
 	
-	private Player player;
+	private PlayerEntity player;
 
 	public void initialize() {
 		engine = JavaGame.getEngine();
@@ -23,7 +23,7 @@ public class World {
 		initGround();
 		
 		Point playerSpawn = new Point(20, 80);
-		player = new Player(engine);
+		player = new PlayerEntity(engine);
 		player.setX(playerSpawn.x); // TODO: Implement setPos(Point p) in Entity [inmylyn]
 		player.setY(playerSpawn.y);
 		
@@ -80,14 +80,14 @@ public class World {
 	/**
 	 * @return the player
 	 */
-	public Player getPlayer() {
+	public PlayerEntity getPlayer() {
 		return player;
 	}
 
 	/**
 	 * @param player the player to set
 	 */
-	public void setPlayer(Player player) {
+	public void setPlayer(PlayerEntity player) {
 		this.player = player;
 	}
 }
