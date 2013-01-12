@@ -15,8 +15,8 @@ public class LivingEntity extends Entity {
 	protected double xacc = 1.5;
 	protected double xdec = 0.75;
 
-	protected double jumpvel = 14;
-	protected double ydec = 0.5;
+	protected double jumpvel = 12;
+	protected double ydec = 0.35;
 	
 	protected double maxxvel = 7;
 	protected double maxyvel = 12;
