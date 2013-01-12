@@ -18,6 +18,9 @@ public class EnemyEntity extends LivingEntity {
 	public EnemyEntity(GameEngine engine) {
 		super(engine);
 		
+		height = 48;
+		width = 48;
+		
 		super.xacc = this.xacc;
 		super.xdec = this.xdec;
 		super.maxxvel = this.maxxvel;
@@ -81,6 +84,6 @@ public class EnemyEntity extends LivingEntity {
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(color);
-		g.drawRect((int)x, (int)y, 64, 64);
+		g.drawRect((int)x, (int)y, width, height);
 	}
 }

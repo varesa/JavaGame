@@ -9,15 +9,21 @@ import fi.dy.esav.GameEngine.GameEngine;
 public class PlayerEntity extends LivingEntity {
 	
 	private Color color = Color.BLUE;
+	
+	private int height = 48;
+	private int width = 48;
 
 	public PlayerEntity(GameEngine engine) {
 		super(engine);
+		
+		height = 48;
+		width = 48;
 	}
 	
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(color);
-		g.drawRect((int)x, (int)y, 64, 64);
+		g.drawRect((int)x, (int)y, width, height);
 	}
 	
 	@Override
