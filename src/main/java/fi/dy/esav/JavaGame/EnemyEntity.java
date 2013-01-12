@@ -43,14 +43,14 @@ public class EnemyEntity extends LivingEntity {
 			if(node == null) {
 				xtarget = player.getX() - this.getX();
 			} else {
-				xtarget = node.getX();
+				xtarget = node.getX() - this.getX();
 			}
 		} else if (target < 0) {
 			JumpAiNode node = findNode(AINODE.DIR_DOWN);
 			if(node == null) {
 				xtarget = player.getX() - this.getX();
 			} else {
-				xtarget = node.getX();
+				xtarget = node.getX() - this.getX();
 			}
 			
 		} else {
@@ -65,17 +65,25 @@ public class EnemyEntity extends LivingEntity {
 		
 		int dist = -1;
 		JumpAiNode closestNode = null;
+		//System.out.println("Looking for nodes");
 		for (AiNode node : AiNode.getNodes()) {
+			//System.out.print("Found node");
 			if (node instanceof JumpAiNode) {
+				//System.out.println("and it is a jump node");
+				//System.out.println("bools: " + String.valueOf((dist == -1 || Utils.getDistanceCenters(node, this) < dist)) + ", " + String.valueOf((JavaGame.getWorld().getStory(node) == JavaGame.getWorld().getStory(this))) + ", " + String.valueOf(((JumpAiNode) node).getDirection() == direction));
+				//System.out.println("A: " + JavaGame.getWorld().getStory(node) + ", B: " + JavaGame.getWorld().getStory(this));
+				
 				if (
 						(dist == -1 || Utils.getDistanceCenters(node, this) < dist) &&
 						(JavaGame.getWorld().getStory(node) == JavaGame.getWorld().getStory(this)) &&
 						((JumpAiNode) node).getDirection() == direction
 				   ) {
+					//System.out.println("new closest node");
 					closestNode = (JumpAiNode) node; 
 				}
 				
 			}
+			//System.out.println("");
 		}
 		
 		return closestNode;

@@ -40,7 +40,7 @@ public class World {
 			engine.addEntity(e);
 		}
 		
-		Point[] jumpsUp = {new Point(400, 560)};
+		Point[] jumpsUp = {new Point(400, 500)};
 		for (Point point : jumpsUp) {
 			engine.addEntity(new JumpAiNode(engine, point.x, point.y, AINODE.DIR_UP));
 		}
@@ -80,6 +80,9 @@ public class World {
 	
 	public int getStory(Entity ent) {
 		int entCenter = (int) (ent.getY() + ent.getHeight()/2);
+		//System.out.println("1: " + entCenter); //TODO: Remove these
+		//System.out.println("2: " + Math.floor(entCenter/storyHeight));
+		//System.out.println("3: " + (int) (3 - Math.floor(entCenter/storyHeight)));
 		return (int) (3 - Math.floor(entCenter/storyHeight));
 	}
 
