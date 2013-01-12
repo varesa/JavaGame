@@ -24,18 +24,14 @@
 		<repository>
 			<id>releaseRepo</id>
 			<name>Internal Releases</name>
-			<url>http://localhost:8081/nexus/content/repositories/oma_release</url>
+			<url>http://nexus.esav.dy.fi/nexus/content/repositories/releases</url>
 		</repository>
 		<repository>
 			<id>snapshotRepo</id>
 			<name>Internal Snapshots</name>
-			<url>http://localhost:8081/nexus/content/repositories/oma_snapshot</url>
+			<url>http://nexus.esav.dy.fi/nexus/content/repositories/oma_snapshot</url>
 		</repository>
-		<repository>
-			<id>otherRepo</id>
-			<name>Other</name>
-			<url>http://localhost:8081/nexus/content/repositories/oma_other</url>
-		</repository>
+
 	</repositories>
 
 	<dependencies>
