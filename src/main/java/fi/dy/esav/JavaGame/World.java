@@ -22,7 +22,7 @@ public class World {
 		
 		initGround();
 		
-		Point playerSpawn = new Point(20, 80);
+		Point playerSpawn = new Point(20, 100);
 		player = new PlayerEntity(engine);
 		player.setX(playerSpawn.x); // TODO: Implement setPos(Point p) in Entity [inmylyn]
 		player.setY(playerSpawn.y);
