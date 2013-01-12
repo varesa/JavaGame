@@ -29,7 +29,7 @@
 		<repository>
 			<id>snapshotRepo</id>
 			<name>Internal Snapshots</name>
-			<url>http://nexus.esav.dy.fi/nexus/content/repositories/oma_snapshot</url>
+			<url>http://nexus.esav.dy.fi/nexus/content/repositories/snapshot</url>
 		</repository>
 
 	</repositories>
