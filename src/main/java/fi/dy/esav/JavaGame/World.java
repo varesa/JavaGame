@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
+import fi.dy.esav.JavaGame.enums.AINODE;
 
 public class World {
 	
@@ -37,6 +38,11 @@ public class World {
 			e.setX(p.getX());
 			e.setY(p.getY());
 			engine.addEntity(e);
+		}
+		
+		Point[] jumpsUp = {new Point(400, 560)};
+		for (Point point : jumpsUp) {
+			engine.addEntity(new JumpAiNode(engine, point.x, point.y, AINODE.DIR_UP));
 		}
 		
 	}
