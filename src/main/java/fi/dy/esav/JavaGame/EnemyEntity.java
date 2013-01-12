@@ -33,7 +33,7 @@ public class EnemyEntity extends LivingEntity {
 		int myStory = world.getStory(this);
 		int playerStory = world.getStory(player);
 		int target = playerStory - myStory;
-		System.out.println(target); // TODO: remove
+		//System.out.println(target); // TODO: remove
 		
 		if(target > 0) {
 			JumpAiNode node = findNode(AINODE.DIR_UP);
@@ -54,7 +54,7 @@ public class EnemyEntity extends LivingEntity {
 			xtarget = player.getX() - this.getX();
 		}
 		
-		System.out.println(xtarget);
+		//System.out.println(xtarget);
 		super.act();
 	}
 	

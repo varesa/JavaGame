@@ -21,6 +21,8 @@ public class JavaGame {
 		world = new World();
 		world.initialize();
 		
+		engine.addEntity(new MouseTrackerEntity(engine));
+		
 		while(engine.getStage().isVisible()) {
 			//System.out.println(engine.getInputstate().getMouseX() + ", " + engine.getInputstate().getMouseY());
 			//System.out.println(engine.getInputstate().getKeyboardState().toString());
