@@ -9,9 +9,6 @@ import fi.dy.esav.GameEngine.GameEngine;
 public class PlayerEntity extends LivingEntity {
 	
 	private Color color = Color.BLUE;
-	
-	private int height = 48;
-	private int width = 48;
 
 	public PlayerEntity(GameEngine engine) {
 		super(engine);
@@ -45,15 +42,4 @@ public class PlayerEntity extends LivingEntity {
 		super.act();
 
 	}
-	
-	@Override
-	public int getWidth() {
-		return width;
-	}
-	
-	@Override
-	public int getHeight() {
-		return height;
-	}
-
 }
