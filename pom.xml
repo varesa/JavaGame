@@ -17,18 +17,26 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<!-- Build an executable JAR -->
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>fi.dy.esav.JavaGame.JavaGame</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>attached</goal>
+						</goals>
+						<phase>package</phase>
+						<configuration>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<archive>
+								<manifest>
+									<mainClass>fi.dy.esav.JavaGame.JavaGame</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
