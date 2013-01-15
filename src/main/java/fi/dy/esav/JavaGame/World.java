@@ -14,8 +14,6 @@ public class World {
 	
 	private GameEngine engine;
 	
-	//Player, Enemies, Ai nodes, etc...
-	
 	private PlayerEntity player;
 
 	public void initialize() {
@@ -80,9 +78,6 @@ public class World {
 	
 	public int getStory(Entity ent) {
 		int entCenter = (int) (ent.getY() + ent.getHeight()/2);
-		//System.out.println("1: " + entCenter); //TODO: Remove these
-		//System.out.println("2: " + Math.floor(entCenter/storyHeight));
-		//System.out.println("3: " + (int) (3 - Math.floor(entCenter/storyHeight)));
 		return (int) (3 - Math.floor(entCenter/storyHeight));
 	}
 
