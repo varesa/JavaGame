@@ -8,9 +8,25 @@ import fi.dy.esav.GameEngine.GameEngine;
 import fi.dy.esav.GameEngine.enums.ENTITY;
 
 public class AiNode extends Entity {
+	
+	//Disabled default constructor
+	private AiNode() { super(null); }
 
 	public AiNode(GameEngine engine) {
 		super(engine);
+		init();
+	}
+
+	public AiNode(GameEngine engine, int x, int y) {
+		super(engine);
+		
+		this.x = x;
+		this.y = y;
+		
+		init();
+	}
+	
+	private void init() {
 		this.setProperty(ENTITY.NO_ACT);
 		this.setProperty(ENTITY.NO_DRAW);
 	}
@@ -18,13 +34,6 @@ public class AiNode extends Entity {
 	@Override
 	public void draw(Graphics g) {
 		g.drawOval((int)x-5, (int)y-5, 10, 10);
-	}
-	
-	public AiNode(GameEngine engine, int x, int y) {
-		super(engine);
-		
-		this.x = x;
-		this.y = y;
 	}
 	
 	public static ArrayList<AiNode> getNodes() {

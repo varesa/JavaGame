@@ -7,6 +7,9 @@ public class JumpAiNode extends AiNode {
 
 	private AINODE direction;
 	
+	//Removed default constructor
+	private JumpAiNode() { super(null);	}
+	
 	public JumpAiNode(GameEngine engine) {
 		super(engine);
 	}
