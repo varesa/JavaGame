@@ -1,5 +1,6 @@
 package fi.dy.esav.JavaGame;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 import fi.dy.esav.GameEngine.Entity;
@@ -11,7 +12,12 @@ public class AiNode extends Entity {
 	public AiNode(GameEngine engine) {
 		super(engine);
 		this.setProperty(ENTITY.NO_ACT);
-		this.setProperty(ENTITY.NO_DRAW);
+		//this.setProperty(ENTITY.NO_DRAW);
+	}
+	
+	@Override
+	public void draw(Graphics g) {
+		g.drawOval((int)x-5, (int)y-5, 10, 10);
 	}
 	
 	public AiNode(GameEngine engine, int x, int y) {
