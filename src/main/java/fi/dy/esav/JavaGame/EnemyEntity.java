@@ -38,15 +38,17 @@ public class EnemyEntity extends LivingEntity {
 		int target = playerStory - myStory;
 		//System.out.println(target); // TODO: remove
 		
+		
+		JumpAiNode node = null;
 		if(target > 0) {
-			JumpAiNode node = findNode(AINODE.DIR_UP);
+			 node = findNode(AINODE.DIR_UP);
 			if(node == null) {
 				xtarget = player.getX() - this.getX();
 			} else {
 				xtarget = node.getX() - this.getX();
 			}
 		} else if (target < 0) {
-			JumpAiNode node = findNode(AINODE.DIR_DOWN);
+			node = findNode(AINODE.DIR_DOWN);
 			if(node == null) {
 				xtarget = player.getX() - this.getX();
 			} else {
@@ -55,6 +57,12 @@ public class EnemyEntity extends LivingEntity {
 			
 		} else {
 			xtarget = player.getX() - this.getX();
+		}
+		
+		if(node != null) {
+			if(Utils.getXDistanceCenters(this, node) < 10) {
+				jump = true;
+			}
 		}
 		
 		//System.out.println(xtarget);

@@ -104,6 +104,7 @@ public class LivingEntity extends Entity {
 			if(collided) {
 				yvel = jumpvel;
 			}
+			jump = false;
 		}
 		
 
