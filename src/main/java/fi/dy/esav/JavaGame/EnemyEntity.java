@@ -36,7 +36,6 @@ public class EnemyEntity extends LivingEntity {
 		int myStory = world.getStory(this);
 		int playerStory = world.getStory(player);
 		int target = playerStory - myStory;
-		//System.out.println(target); // TODO: remove
 		
 		
 		JumpAiNode node = null;
@@ -67,19 +66,12 @@ public class EnemyEntity extends LivingEntity {
 		
 		super.act();
 	}
-	
-	private AiNode targetNode;
-	
 	private JumpAiNode findNode(AINODE direction) {
 		
 		int dist = -1;
 		JumpAiNode closestNode = null;
 		for (AiNode node : AiNode.getNodes()) {
 			if (node instanceof JumpAiNode) {
-				//System.out.println("and it is a jump node");
-				//System.out.println("bools: " + String.valueOf((dist == -1 || Utils.getDistanceCenters(node, this) < dist)) + ", " + String.valueOf((JavaGame.getWorld().getStory(node) == JavaGame.getWorld().getStory(this))) + ", " + String.valueOf(((JumpAiNode) node).getDirection() == direction));
-				//System.out.println("A: " + JavaGame.getWorld().getStory(node) + ", B: " + JavaGame.getWorld().getStory(this));
-				
 				if (
 						(dist == -1 || Utils.getDistanceCenters(node, this) < dist) &&
 						(JavaGame.getWorld().getStory(node) == JavaGame.getWorld().getStory(this)) &&
@@ -91,7 +83,6 @@ public class EnemyEntity extends LivingEntity {
 				}
 				
 			}
-			//System.out.println("");
 		}
 		
 		return closestNode;
