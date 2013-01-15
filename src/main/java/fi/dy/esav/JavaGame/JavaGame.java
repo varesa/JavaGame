@@ -13,19 +13,15 @@ public class JavaGame {
 	public static void main(String[] args) {
 		engine = new GameEngine();
 		engine.start();
-		//engine.getStage().setVisible(true);
 
 		while(!engine.getStage().isValid()) continue;
 		
-		//engine.addEntity(new TestEntity(engine));
 		world = new World();
 		world.initialize();
 		
 		//engine.addEntity(new MouseTrackerEntity(engine));
 		
 		while(engine.getStage().isVisible()) {
-			//System.out.println(engine.getInputstate().getMouseX() + ", " + engine.getInputstate().getMouseY());
-			//System.out.println(engine.getInputstate().getKeyboardState().toString());
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
