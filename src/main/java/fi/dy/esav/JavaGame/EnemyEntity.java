@@ -79,7 +79,6 @@ public class EnemyEntity extends LivingEntity {
 				   ) {
 					closestNode = (JumpAiNode) node; 
 					dist = (int) Utils.getDistanceCenters(node, this);
-					System.out.println("Closest x dist:" + dist);
 				}
 				
 			}
