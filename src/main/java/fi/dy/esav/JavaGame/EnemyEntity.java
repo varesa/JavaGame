@@ -65,17 +65,16 @@ public class EnemyEntity extends LivingEntity {
 			}
 		}
 		
-		//System.out.println(xtarget);
 		super.act();
 	}
+	
+	private AiNode targetNode;
 	
 	private JumpAiNode findNode(AINODE direction) {
 		
 		int dist = -1;
 		JumpAiNode closestNode = null;
-		//System.out.println("Looking for nodes");
 		for (AiNode node : AiNode.getNodes()) {
-			//System.out.print("Found node");
 			if (node instanceof JumpAiNode) {
 				//System.out.println("and it is a jump node");
 				//System.out.println("bools: " + String.valueOf((dist == -1 || Utils.getDistanceCenters(node, this) < dist)) + ", " + String.valueOf((JavaGame.getWorld().getStory(node) == JavaGame.getWorld().getStory(this))) + ", " + String.valueOf(((JumpAiNode) node).getDirection() == direction));
@@ -86,8 +85,9 @@ public class EnemyEntity extends LivingEntity {
 						(JavaGame.getWorld().getStory(node) == JavaGame.getWorld().getStory(this)) &&
 						((JumpAiNode) node).getDirection() == direction
 				   ) {
-					//System.out.println("new closest node");
 					closestNode = (JumpAiNode) node; 
+					dist = (int) Utils.getDistanceCenters(node, this);
+					System.out.println("Closest x dist:" + dist);
 				}
 				
 			}
