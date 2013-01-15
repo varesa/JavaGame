@@ -59,7 +59,7 @@ public class LivingEntity extends Entity {
 		
 		x += xvel;
 		
-		for(Entity ent : JavaGame.getEngine().getEntities()) {
+		for(Entity ent : engine.getEntities()) {
 			if(!(ent instanceof GroundEntity)) break;
 			if(this.getY()+this.getHeight() > ent.getY() && this.getY() < ent.getY()+ent.getHeight()) {
 				if( this.getX()+this.getWidth() > ent.getX() && this.getX()+this.getWidth() < ent.getX()+ent.getWidth()) {
@@ -77,7 +77,7 @@ public class LivingEntity extends Entity {
 		
 		y -= yvel;
 		
-		for(Entity ent : JavaGame.getEngine().getEntities()) {
+		for(Entity ent : engine.getEntities()) {
 			if(!(ent instanceof GroundEntity)) break;
 			if(this.getX()+this.getWidth() > ent.getX() && this.getX() < ent.getX()+ent.getWidth()) {
 				if( this.getY()+this.getHeight() > ent.getY() && this.getY()+this.getHeight() < ent.getY()+ent.getHeight()) {
