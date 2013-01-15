@@ -12,7 +12,7 @@ public class AiNode extends Entity {
 	public AiNode(GameEngine engine) {
 		super(engine);
 		this.setProperty(ENTITY.NO_ACT);
-		//this.setProperty(ENTITY.NO_DRAW);
+		this.setProperty(ENTITY.NO_DRAW);
 	}
 	
 	@Override
