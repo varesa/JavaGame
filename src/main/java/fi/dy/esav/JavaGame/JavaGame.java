@@ -44,7 +44,7 @@ public class JavaGame {
 	/**
 	 * @param engine the engine to set
 	 */
-	public void setEngine(GameEngine engine) {
+	public static void setEngine(GameEngine engine) {
 		JavaGame.engine = engine;
 	}
 
