@@ -47,10 +47,8 @@ public class Bullet extends Entity {
 		ArrayList<Entity> entities = (ArrayList<Entity>) engine.getEntities().clone();
 		for(Entity ent : entities) {
 			if(ent instanceof LivingEntity) {
-				System.out.println("checking for entity collision");
 				if(Utils.simpleHitTest(this, ent)) {
 					engine.removeEntity(ent);
-					System.out.println("hit");
 				}
 			}
 		}
