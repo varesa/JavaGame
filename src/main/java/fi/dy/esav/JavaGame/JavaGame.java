@@ -31,8 +31,6 @@ public class JavaGame {
 		}
 		
 		engine.stop();
-
-		System.out.println("Closing");
 		engine.getStage().dispose();
 	}
 
