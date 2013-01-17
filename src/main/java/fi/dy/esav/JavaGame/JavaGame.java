@@ -40,6 +40,12 @@ public class JavaGame {
 		engine.getStage().dispose();
 	}
 
+	public static void close() {
+		world.clear();
+		engine.stop();
+		engine.getStage().dispose();
+	}
+	
 	/**
 	 * @return the engine
 	 */

@@ -74,23 +74,7 @@ public class EnemyEntity extends LivingEntity {
 			
 			if(Utils.simpleHitTest(this, player)) {
 				
-				for (Entity ent : engine.getEntities()) {
-					if (ent instanceof EntitySpawner) {
-						((EntitySpawner) ent).shutdown();
-					}
-				}
-				
-				JavaGame.setEngine(new GameEngine());
-				JavaGame.getEngine().start();
-
-				while(!JavaGame.getEngine().getStage().isValid()) continue;
-				
-				JavaGame.setWorld(new World());
-				JavaGame.getWorld().initialize();
-				
-				//engine.getStage().setVisible(false);
-				engine.getStage().dispose();
-				engine.stop();
+				JavaGame.getWorld().gameOver();
 			}
 		}
 

@@ -16,6 +16,9 @@ public class World {
 	
 	private PlayerEntity player;
 
+	int storyHeight;
+	int widthUnit;
+
 	public void initialize() {
 		engine = JavaGame.getEngine();
 		
@@ -58,9 +61,6 @@ public class World {
 		
 	}
 	
-	int storyHeight;
-	int widthUnit;
-	
 	private void initGround() {
 		int stageWidth = engine.getStage().getContentPane().getWidth();
 		int stageHeight = engine.getStage().getContentPane().getHeight();
@@ -87,6 +87,48 @@ public class World {
 		for (Rectangle rect : ground) {
 			engine.addEntity(new GroundEntity(engine, rect));
 		}
+	}
+	
+	public void clear() {
+		for (Entity ent : engine.getEntities()) {
+			if (ent instanceof EntitySpawner) {
+				((EntitySpawner) ent).shutdown();
+			}
+			engine.removeEntity(ent);
+		}
+	}
+	
+	public void gameOver() {
+		for (Entity ent : engine.getEntities()) {
+			if (ent instanceof EntitySpawner) {
+				((EntitySpawner) ent).shutdown();
+			}
+			engine.removeEntity(ent);
+		}
+		engine.addEntity(new GameoverEntity(engine));
+		
+		/*JavaGame.setEngine(new GameEngine());
+		JavaGame.getEngine().start();
+
+		while(!JavaGame.getEngine().getStage().isValid()) continue;
+		
+		JavaGame.setWorld(new World());
+		JavaGame.getWorld().initialize();
+		
+		//engine.getStage().setVisible(false);
+		engine.getStage().dispose();
+		engine.stop();*/
+	}
+	
+	public void reinitialize() {		
+		clear();
+		try {
+			Thread.sleep(50);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		initialize();
 	}
 	
 	public int getStory(Entity ent) {
