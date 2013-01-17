@@ -29,11 +29,16 @@ public class World {
 		
 		ArrayList<Point> enemySpawns = new ArrayList<Point>();
 		enemySpawns.add(new Point(500,50));
+		enemySpawns.add(new Point(50,50));
+		enemySpawns.add(new Point(100,500));
+		enemySpawns.add(new Point(700,300));
 		
+		
+		long initialDelay = 1000;
 		for(Point p : enemySpawns) {
-			EnemyEntity e = new EnemyEntity(engine);
-			e.setX(p.getX());
-			e.setY(p.getY());
+			EntitySpawner e = new EntitySpawner(p, 20000, initialDelay, engine);
+			initialDelay += 5000;
+			e.setSpawnable(EnemyEntity.class.getCanonicalName());
 			engine.addEntity(e);
 		}
 		
