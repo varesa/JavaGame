@@ -80,7 +80,7 @@ public class EnemyEntity extends LivingEntity {
 				JavaGame.setWorld(new World());
 				JavaGame.getWorld().initialize();
 				
-				engine.getStage().show(false);
+				engine.getStage().setVisible(false);
 				engine.stop();
 			}
 		}
