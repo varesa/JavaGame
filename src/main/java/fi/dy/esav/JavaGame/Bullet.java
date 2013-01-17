@@ -2,9 +2,11 @@ package fi.dy.esav.JavaGame;
 
 import java.awt.Graphics;
 import java.awt.Point;
+import java.util.ArrayList;
 
 import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
+import fi.dy.esav.GameEngine.Utils;
 import fi.dy.esav.JavaGame.enums.DIRECTION;
 
 public class Bullet extends Entity {
@@ -38,6 +40,17 @@ public class Bullet extends Entity {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+		
+		@SuppressWarnings("unchecked")
+		ArrayList<Entity> entities = (ArrayList<Entity>) engine.getEntities().clone();
+		for(Entity ent : entities) {
+			if(ent instanceof LivingEntity) {
+				
+			}
+		}
+		if(this.x < 0 || this.x > engine.getStage().getWidth()) {
+			engine.removeEntity(this);
 		}
 	}
 	
