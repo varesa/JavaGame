@@ -2,6 +2,7 @@ package fi.dy.esav.JavaGame;
 
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import fi.dy.esav.GameEngine.Entity;
@@ -46,7 +47,11 @@ public class Bullet extends Entity {
 		ArrayList<Entity> entities = (ArrayList<Entity>) engine.getEntities().clone();
 		for(Entity ent : entities) {
 			if(ent instanceof LivingEntity) {
-				
+				System.out.println("checking for entity collision");
+				if(Utils.simpleHitTest(this, ent)) {
+					engine.removeEntity(ent);
+					System.out.println("hit");
+				}
 			}
 		}
 		if(this.x < 0 || this.x > engine.getStage().getWidth()) {
@@ -85,6 +90,15 @@ public class Bullet extends Entity {
 	 */
 	public void setDirection(DIRECTION direction) {
 		this.direction = direction;
+	}
+	
+	@Override
+	public int getWidth() {
+		return 10;
+	}
+
+	public int getHeight() {
+		return 5;
 	}
 
 }

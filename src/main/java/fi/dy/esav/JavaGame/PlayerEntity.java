@@ -2,6 +2,7 @@ package fi.dy.esav.JavaGame;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.KeyEvent;
 
 import fi.dy.esav.GameEngine.GameEngine;
@@ -47,12 +48,17 @@ public class PlayerEntity extends LivingEntity {
 
 		if (this.engine.getInputState().isKeyDown(KeyEvent.VK_SPACE)) {
 			if (canShoot <= System.currentTimeMillis()) {
-				if (facing == DIRECTION.LEFT) {
-					this.engine.addEntity(new Bullet(this.getPos(),
-							DIRECTION.LEFT, this.engine));
-				} else if (facing == DIRECTION.RIGHT) {
 
-					this.engine.addEntity(new Bullet(this.getPos(),
+				Point bulletPos = this.getPos();
+				bulletPos.translate(0, 20);
+
+				if (facing == DIRECTION.LEFT) {
+					bulletPos.translate(-20, 0);
+					this.engine.addEntity(new Bullet(bulletPos, DIRECTION.LEFT,
+							this.engine));
+				} else if (facing == DIRECTION.RIGHT) {
+					bulletPos.translate(getWidth()+20, 0);
+					this.engine.addEntity(new Bullet(bulletPos,
 							DIRECTION.RIGHT, this.engine));
 				}
 				canShoot = System.currentTimeMillis() + shootDelay;
