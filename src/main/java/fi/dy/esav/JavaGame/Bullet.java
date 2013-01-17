@@ -13,6 +13,7 @@ import fi.dy.esav.JavaGame.enums.DIRECTION;
 public class Bullet extends Entity {
 	
 	private double speed = 10;
+	private double damage = 11;
 	private DIRECTION direction = null;
 
 	public Bullet(GameEngine engine) {
@@ -46,9 +47,10 @@ public class Bullet extends Entity {
 		@SuppressWarnings("unchecked")
 		ArrayList<Entity> entities = (ArrayList<Entity>) engine.getEntities().clone();
 		for(Entity ent : entities) {
-			if(ent instanceof LivingEntity) {
+			if(ent instanceof EnemyEntity) {
 				if(Utils.simpleHitTest(this, ent)) {
-					engine.removeEntity(ent);
+					((EnemyEntity) ent).damage(damage);
+					engine.removeEntity(this);
 				}
 			}
 		}
