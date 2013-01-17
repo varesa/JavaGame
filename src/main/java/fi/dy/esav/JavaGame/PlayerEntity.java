@@ -41,7 +41,12 @@ public class PlayerEntity extends LivingEntity {
 		}
 		
 		if(this.engine.getInputState().isKeyDown(KeyEvent.VK_SPACE)) {
-			this.engine.addEntity(new Bullet(this.getPos(), DIRECTION.LEFT, this.engine));
+			if(facing == DIRECTION.LEFT) {
+				this.engine.addEntity(new Bullet(this.getPos(), DIRECTION.LEFT, this.engine));
+			} else if(facing == DIRECTION.RIGHT) {
+
+				this.engine.addEntity(new Bullet(this.getPos(), DIRECTION.RIGHT, this.engine));
+			}
 		}
 		
 		super.act();

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
+import fi.dy.esav.JavaGame.enums.DIRECTION;
 
 public class LivingEntity extends Entity {
 
@@ -28,6 +29,8 @@ public class LivingEntity extends Entity {
 	
 	protected double xtarget = 0;
 	protected boolean jump = false;
+	
+	protected DIRECTION facing = DIRECTION.RIGHT;
 	
 	public LivingEntity(GameEngine engine) {
 		super(engine);
@@ -60,7 +63,11 @@ public class LivingEntity extends Entity {
 				xvel = 0;
 			}
 		}
-		
+		if(xvel < 0) {
+			facing = DIRECTION.LEFT;
+		} else {
+			facing = DIRECTION.RIGHT;
+		}
 		x += xvel;
 		
 		for(Entity ent : entities) {

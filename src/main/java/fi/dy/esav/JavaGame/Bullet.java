@@ -5,32 +5,32 @@ import java.awt.Point;
 
 import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
-import fi.dy.esav.JavaGame.enums.BULLET;
+import fi.dy.esav.JavaGame.enums.DIRECTION;
 
 public class Bullet extends Entity {
 	
 	private double speed = 10;
-	private BULLET direction = null;
+	private DIRECTION direction = null;
 
 	public Bullet(GameEngine engine) {
 		super(engine);
 	}
 	
-	public Bullet(Point pos, BULLET direction, GameEngine engine) {
+	public Bullet(Point pos, DIRECTION direction, GameEngine engine) {
 		super(pos, engine);
 		this.direction = direction;
 	}
 	
-	public Bullet(double x, double y, BULLET direction, GameEngine engine) {
+	public Bullet(double x, double y, DIRECTION direction, GameEngine engine) {
 		super(x, y, engine);
 		this.direction = direction;
 	}
 	
 	@Override
 	public void act() {
-		if(this.direction == BULLET.DIRECTION_LEFT) {
+		if(this.direction == DIRECTION.LEFT) {
 			this.x -= this.speed;
-		} else if (this.direction == BULLET.DIRECTION_RIGHT) {
+		} else if (this.direction == DIRECTION.RIGHT) {
 			this.x += this.speed;
 		} else {
 			try {
@@ -63,14 +63,14 @@ public class Bullet extends Entity {
 	/**
 	 * @return the direction
 	 */
-	public BULLET getDirection() {
+	public DIRECTION getDirection() {
 		return direction;
 	}
 
 	/**
 	 * @param direction the direction to set
 	 */
-	public void setDirection(BULLET direction) {
+	public void setDirection(DIRECTION direction) {
 		this.direction = direction;
 	}
 
