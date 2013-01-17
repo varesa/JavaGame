@@ -3,6 +3,10 @@ package fi.dy.esav.JavaGame;
 import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
 
+/**
+ * This is a tool for debugging / map creation
+ */
+
 public class MouseTrackerEntity extends Entity {
 
 	public MouseTrackerEntity(GameEngine engine) {

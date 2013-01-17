@@ -8,6 +8,10 @@ import java.awt.event.KeyEvent;
 import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
 
+/**
+ * This is a tool for debugging / engine testing 
+ */
+
 public class TestEntity extends Entity {
 	
 	Image sprite;
