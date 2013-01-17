@@ -66,6 +66,7 @@ public class EntitySpawner extends Entity {
 
 	public void shutdown() {
 		spawner.shutdown();
+		spawnerThread.interrupt();
 	}
 
 	/**
@@ -146,7 +147,7 @@ class SpawnerThread implements Runnable {
 		try {
 			Thread.sleep(main.getInitialDelay());
 		} catch (InterruptedException e1) {
-			e1.printStackTrace();
+			// Interrupted the thread, allow it to end
 		}
 
 		while (run) {
@@ -188,6 +189,5 @@ class SpawnerThread implements Runnable {
 
 	public void shutdown() {
 		run = false;
-		Thread.currentThread().interrupt();
 	}
 }
