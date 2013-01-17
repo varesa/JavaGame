@@ -2,6 +2,8 @@ package fi.dy.esav.JavaGame;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
+
 import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
 
@@ -39,6 +41,8 @@ public class LivingEntity extends Entity {
 	
 	@Override
 	public void act() {
+		@SuppressWarnings("unchecked")
+		ArrayList<Entity> entities = (ArrayList<Entity>) engine.getEntities().clone();
 		if(xtarget < 0) {
 			xvel -= xacc;
 			if (xvel < -maxxvel) {
@@ -59,7 +63,7 @@ public class LivingEntity extends Entity {
 		
 		x += xvel;
 		
-		for(Entity ent : engine.getEntities()) {
+		for(Entity ent : entities) {
 			if(!(ent instanceof GroundEntity)) break;
 			if(this.getY()+this.getHeight() > ent.getY() && this.getY() < ent.getY()+ent.getHeight()) {
 				if( this.getX()+this.getWidth() > ent.getX() && this.getX()+this.getWidth() < ent.getX()+ent.getWidth()) {
@@ -77,7 +81,7 @@ public class LivingEntity extends Entity {
 		
 		y -= yvel;
 		
-		for(Entity ent : engine.getEntities()) {
+		for(Entity ent : entities) {
 			if(!(ent instanceof GroundEntity)) break;
 			if(this.getX()+this.getWidth() > ent.getX() && this.getX() < ent.getX()+ent.getWidth()) {
 				if( this.getY()+this.getHeight() > ent.getY() && this.getY()+this.getHeight() < ent.getY()+ent.getHeight()) {
