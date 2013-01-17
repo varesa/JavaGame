@@ -3,6 +3,7 @@ package fi.dy.esav.JavaGame;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
 import fi.dy.esav.GameEngine.Utils;
 import fi.dy.esav.JavaGame.enums.AINODE;
@@ -72,6 +73,13 @@ public class EnemyEntity extends LivingEntity {
 			}
 			
 			if(Utils.simpleHitTest(this, player)) {
+				
+				for (Entity ent : engine.getEntities()) {
+					if (ent instanceof EntitySpawner) {
+						((EntitySpawner) ent).shutdown();
+					}
+				}
+				
 				JavaGame.setEngine(new GameEngine());
 				JavaGame.getEngine().start();
 
@@ -80,7 +88,8 @@ public class EnemyEntity extends LivingEntity {
 				JavaGame.setWorld(new World());
 				JavaGame.getWorld().initialize();
 				
-				engine.getStage().setVisible(false);
+				//engine.getStage().setVisible(false);
+				engine.getStage().dispose();
 				engine.stop();
 			}
 		}

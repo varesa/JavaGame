@@ -1,5 +1,6 @@
 package fi.dy.esav.JavaGame;
 
+import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
 
 public class JavaGame {
@@ -25,8 +26,13 @@ public class JavaGame {
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}
+		}
+		
+		for (Entity ent : engine.getEntities()) {
+			if (ent instanceof EntitySpawner) {
+				((EntitySpawner) ent).shutdown();
 			}
 		}
 		
