@@ -70,6 +70,19 @@ public class EnemyEntity extends LivingEntity {
 					jump = true;
 				}
 			}
+			
+			if(Utils.simpleHitTest(this, player)) {
+				JavaGame.setEngine(new GameEngine());
+				JavaGame.getEngine().start();
+
+				while(!JavaGame.getEngine().getStage().isValid()) continue;
+				
+				JavaGame.setWorld(new World());
+				JavaGame.getWorld().initialize();
+				
+				engine.getStage().show(false);
+				engine.stop();
+			}
 		}
 
 		if(dead && System.currentTimeMillis() > fullOpacity) {
