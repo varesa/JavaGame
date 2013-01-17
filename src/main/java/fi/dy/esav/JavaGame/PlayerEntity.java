@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 
 import fi.dy.esav.GameEngine.GameEngine;
+import fi.dy.esav.JavaGame.enums.DIRECTION;
 
 public class PlayerEntity extends LivingEntity {
 	
@@ -37,6 +38,10 @@ public class PlayerEntity extends LivingEntity {
 			this.jump = true;
 		} else {
 			this.jump = false;
+		}
+		
+		if(this.engine.getInputState().isKeyDown(KeyEvent.VK_SPACE)) {
+			this.engine.addEntity(new Bullet(this.getPos(), DIRECTION.LEFT, this.engine));
 		}
 		
 		super.act();
