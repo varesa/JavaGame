@@ -10,11 +10,11 @@ import fi.dy.esav.JavaGame.enums.AINODE;
 
 public class World {
 	
-	static final double gravity = 10;
-	
 	private GameEngine engine;
 	
 	private PlayerEntity player;
+	
+	private Score score;
 
 	int storyHeight;
 	int widthUnit;
@@ -58,6 +58,8 @@ public class World {
 		for (Point point : jumpsUp) {
 			engine.addEntity(new JumpAiNode(engine, point.x, point.y, AINODE.DIR_UP));
 		}
+		
+		score = new Score();
 		
 	}
 	
@@ -148,5 +150,19 @@ public class World {
 	 */
 	public void setPlayer(PlayerEntity player) {
 		this.player = player;
+	}
+
+	/**
+	 * @return the score
+	 */
+	public Score getScore() {
+		return score;
+	}
+
+	/**
+	 * @param score the score to set
+	 */
+	public void setScore(Score score) {
+		this.score = score;
 	}
 }
