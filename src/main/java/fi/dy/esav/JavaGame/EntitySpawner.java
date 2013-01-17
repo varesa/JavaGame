@@ -55,10 +55,15 @@ public class EntitySpawner extends Entity {
 		init();
 	}
 
-	private Thread spawnerThread = new Thread(new SpawnerThread(this, engine));
+	private SpawnerThread spawner = new SpawnerThread(this, engine);
+	private Thread spawnerThread = new Thread(spawner);
 
 	private void init() {
 		spawnerThread.start();
+	}
+	
+	public void shutdown() {
+		spawner.shutdown();
 	}
 
 	/**
@@ -177,7 +182,7 @@ class SpawnerThread implements Runnable {
 		}
 	}
 
-	public void stop() {
+	public void shutdown() {
 		run = false;
 	}
 }
