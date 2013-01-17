@@ -6,6 +6,7 @@ import java.awt.Point;
 import java.awt.event.KeyEvent;
 
 import fi.dy.esav.GameEngine.GameEngine;
+import fi.dy.esav.GameEngine.InputState;
 import fi.dy.esav.JavaGame.enums.DIRECTION;
 
 public class PlayerEntity extends LivingEntity {
@@ -32,21 +33,23 @@ public class PlayerEntity extends LivingEntity {
 
 	@Override
 	public void act() {
-		if (this.engine.getInputState().isKeyDown(KeyEvent.VK_LEFT)) {
+		InputState input = engine.getInputState();
+		
+		if (input.isKeyDown(KeyEvent.VK_LEFT)) {
 			this.xtarget = -1;
-		} else if (this.engine.getInputState().isKeyDown(KeyEvent.VK_RIGHT)) {
+		} else if (input.isKeyDown(KeyEvent.VK_RIGHT)) {
 			this.xtarget = +1;
 		} else {
 			this.xtarget = 0;
 		}
 
-		if (this.engine.getInputState().isKeyDown(KeyEvent.VK_UP)) {
+		if (input.isKeyDown(KeyEvent.VK_UP)) {
 			this.jump = true;
 		} else {
 			this.jump = false;
 		}
 
-		if (this.engine.getInputState().isKeyDown(KeyEvent.VK_SPACE)) {
+		if (input.isKeyDown(KeyEvent.VK_SPACE)) {
 			if (canShoot <= System.currentTimeMillis()) {
 
 				Point bulletPos = this.getPos();
