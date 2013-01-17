@@ -40,15 +40,17 @@ public class EntitySpawner extends Entity {
 		this.interval = interval;
 		init();
 	}
-	
-	public EntitySpawner(Point position, long interval, long initialDelay, GameEngine engine) {
+
+	public EntitySpawner(Point position, long interval, long initialDelay,
+			GameEngine engine) {
 		super(position, engine);
 		this.interval = interval;
 		this.initialDelay = initialDelay;
 		init();
 	}
 
-	public EntitySpawner(double x, double y, long interval, long initialDelay, GameEngine engine) {
+	public EntitySpawner(double x, double y, long interval, long initialDelay,
+			GameEngine engine) {
 		super(x, y, engine);
 		this.interval = interval;
 		this.initialDelay = initialDelay;
@@ -61,7 +63,7 @@ public class EntitySpawner extends Entity {
 	private void init() {
 		spawnerThread.start();
 	}
-	
+
 	public void shutdown() {
 		spawner.shutdown();
 	}
@@ -104,7 +106,8 @@ public class EntitySpawner extends Entity {
 	}
 
 	/**
-	 * @param initialDelay the initialDelay to set
+	 * @param initialDelay
+	 *            the initialDelay to set
 	 */
 	public void setInitialDelay(long initialDelay) {
 		this.initialDelay = initialDelay;
@@ -118,7 +121,8 @@ public class EntitySpawner extends Entity {
 	}
 
 	/**
-	 * @param spawnable the spawnable to set as FQN!
+	 * @param spawnable
+	 *            the spawnable to set as FQN!
 	 */
 	public void setSpawnable(String spawnable) {
 		this.spawnable = spawnable;
@@ -144,7 +148,7 @@ class SpawnerThread implements Runnable {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+
 		while (run) {
 			spawn();
 			try {
@@ -152,7 +156,7 @@ class SpawnerThread implements Runnable {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			//main.setInterval(main.getInterval() - main.getIntervalDelta());
+			main.setInterval(main.getInterval() - main.getIntervalDelta());
 
 		}
 
