@@ -4,13 +4,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import java.awt.Point;
 import java.awt.event.KeyEvent;
 
 import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
 import fi.dy.esav.GameEngine.InputState;
-import fi.dy.esav.GameEngine.enums.ENTITY;
 
 public class GameoverEntity extends Entity {
 

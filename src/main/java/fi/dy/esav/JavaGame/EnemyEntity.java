@@ -3,7 +3,6 @@ package fi.dy.esav.JavaGame;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
 import fi.dy.esav.GameEngine.Utils;
 import fi.dy.esav.JavaGame.enums.AINODE;
@@ -109,6 +108,7 @@ public class EnemyEntity extends LivingEntity {
 		if (damage > hitpoints) {
 			dead = true;
 			ai = false;
+			JavaGame.getWorld().getScore().increase();
 		} else {
 			hitpoints -= damage;
 		}
