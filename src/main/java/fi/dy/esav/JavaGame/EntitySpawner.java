@@ -141,11 +141,11 @@ class SpawnerThread implements Runnable {
 		this.engine = game;
 	}
 
+	
 	public void run() {
 		try {
 			Thread.sleep(main.getInitialDelay());
 		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
@@ -154,7 +154,7 @@ class SpawnerThread implements Runnable {
 			try {
 				Thread.sleep(main.getInterval());
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				// Interrupted the thread, allow it to end
 			}
 			main.setInterval(main.getInterval() - main.getIntervalDelta());
 
@@ -188,5 +188,6 @@ class SpawnerThread implements Runnable {
 
 	public void shutdown() {
 		run = false;
+		Thread.currentThread().interrupt();
 	}
 }
