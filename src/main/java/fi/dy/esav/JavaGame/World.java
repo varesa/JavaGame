@@ -60,6 +60,8 @@ public class World {
 		}
 		
 		score = new Score();
+		HudEntity hud = new HudEntity(engine);
+		engine.addEntity(hud);
 		
 	}
 	
@@ -101,6 +103,9 @@ public class World {
 	}
 	
 	public void gameOver() {
+		
+		score.stopCounting();
+		
 		for (Entity ent : engine.getEntities()) {
 			if (ent instanceof EntitySpawner) {
 				((EntitySpawner) ent).shutdown();
