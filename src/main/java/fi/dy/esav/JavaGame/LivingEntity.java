@@ -63,9 +63,9 @@ public class LivingEntity extends Entity {
 				xvel = 0;
 			}
 		}
-		if(xvel < 0) {
+		if(xtarget < 0) {
 			facing = DIRECTION.LEFT;
-		} else if(xvel > 0){
+		} else if(xtarget > 0){
 			facing = DIRECTION.RIGHT;
 		}
 		x += xvel;
