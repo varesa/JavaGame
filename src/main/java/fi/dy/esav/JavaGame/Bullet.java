@@ -1,5 +1,6 @@
 package fi.dy.esav.JavaGame;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.util.ArrayList;
@@ -14,6 +15,8 @@ public class Bullet extends Entity {
 	private double speed = 10;
 	private double damage = 11;
 	private DIRECTION direction = null;
+	
+	Color color = Color.GRAY;
 
 	public Bullet(GameEngine engine) {
 		super(engine);
@@ -60,7 +63,8 @@ public class Bullet extends Entity {
 	
 	@Override
 	public void draw(Graphics g) {
-		g.drawRect((int)x, (int)y, 10, 5);
+		g.setColor(color);
+		g.fillRect((int)x, (int)y, 10, 5);
 	}
 	
 	/**
