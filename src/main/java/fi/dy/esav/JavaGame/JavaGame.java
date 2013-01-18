@@ -15,6 +15,8 @@ public class JavaGame {
 		engine = new GameEngine();
 		engine.start();
 
+		engine.getStage().setTitle("The Hard-O-Game");
+		
 		while(!engine.getStage().isValid()) continue;
 		
 		world = new World();
