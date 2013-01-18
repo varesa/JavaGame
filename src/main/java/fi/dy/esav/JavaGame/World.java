@@ -37,7 +37,7 @@ public class World {
 		enemySpawns.add(new Point(700,300));
 		
 		
-		long initialDelay = 1000;
+		long initialDelay = 0;
 		for(Point p : enemySpawns) {
 			EntitySpawner e = new EntitySpawner(p, 20000, initialDelay, engine);
 			initialDelay += 5000;
