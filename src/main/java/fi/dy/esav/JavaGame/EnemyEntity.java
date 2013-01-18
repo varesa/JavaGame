@@ -146,6 +146,7 @@ public class EnemyEntity extends LivingEntity {
 			Color newcolor = new Color(color.getRed(), color.getGreen(), color.getBlue(), (int) (255 - 255*time));
 			
 			Graphics2D g2d = (Graphics2D) g;
+			g2d.setColor(newcolor);
 			g2d.rotate(rotation, originx, originy);
 			g2d.drawRect((int) (originx-sizex/2), (int) (originy-sizey/2), (int)sizex, (int)sizey);
 			g2d.rotate(-rotation, originx, originy);
