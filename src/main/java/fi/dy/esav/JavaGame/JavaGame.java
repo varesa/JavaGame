@@ -6,7 +6,7 @@ import fi.dy.esav.GameEngine.GameEngine;
 public class JavaGame {
 	
 	private static GameEngine engine;
-	static World world;
+	private static World world;
 	
 	/**
 	 * Main method
