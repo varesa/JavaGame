@@ -12,7 +12,7 @@ public class JumpAiNode extends AiNode {
 	private AINODE direction;
 	
 	/**
-	 * Disabled default constructor
+	 * Disabled parameterless constructor
 	 */
 	private JumpAiNode() { super(null);	}
 	
