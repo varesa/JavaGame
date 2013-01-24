@@ -8,6 +8,10 @@ import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
 import fi.dy.esav.JavaGame.enums.DIRECTION;
 
+/**
+ * A base class for every moving/living "creature"
+ */
+
 public class LivingEntity extends Entity {
 
 	protected int width = 64;
@@ -32,16 +36,30 @@ public class LivingEntity extends Entity {
 	
 	protected DIRECTION facing = DIRECTION.RIGHT;
 	
+	/**
+	 * Default constructor
+	 * @param engine reference to the GameEngine
+	 */
 	public LivingEntity(GameEngine engine) {
 		super(engine);
 	}
 	
+	/**
+	 * Method to do the drawing in
+	 * overrides parent class template method
+	 * @param g Graphics instance to draw on
+	 */
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(color);
 		g.drawRect((int)x, (int)y, 64, 64);
 	}
 	
+	
+	/**
+	 * Method to do the logic
+	 * overrides parent class template method
+	 */
 	@Override
 	public void act() {
 		@SuppressWarnings("unchecked")
@@ -121,11 +139,21 @@ public class LivingEntity extends Entity {
 
 	}
 	
+	/**
+	 * Method to return the width
+	 * overrides parent class template method
+	 * @return the width of the entity
+	 */
 	@Override
 	public int getWidth() {
 		return width;
 	}
 	
+	/**
+	 * Method to return the height
+	 * overrides parent class template method
+	 * @return the height of the entity
+	 */
 	@Override
 	public int getHeight() {
 		return height;
