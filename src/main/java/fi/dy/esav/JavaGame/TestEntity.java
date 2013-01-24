@@ -20,7 +20,7 @@ public class TestEntity extends Entity {
 	private double y = 500;
 	
 	/**
-	 * Disabled default constructor
+	 * Disabled parameterless constructor
 	 */
 	private TestEntity() { super(null);	}
 	

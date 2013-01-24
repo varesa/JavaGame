@@ -3,11 +3,17 @@ package fi.dy.esav.JavaGame;
 import fi.dy.esav.GameEngine.GameEngine;
 import fi.dy.esav.JavaGame.enums.AINODE;;
 
+/**
+ * Class to build the node based jump-navigation 
+ */
+
 public class JumpAiNode extends AiNode {
 
 	private AINODE direction;
 	
-	//Removed default constructor
+	/**
+	 * Disabled default constructor
+	 */
 	private JumpAiNode() { super(null);	}
 	
 	public JumpAiNode(GameEngine engine) {

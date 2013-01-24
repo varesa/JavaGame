@@ -11,7 +11,7 @@ import fi.dy.esav.GameEngine.GameEngine;
 public class MouseTrackerEntity extends Entity {
 
 	/**
-	 * Disabled default constructor
+	 * Disabled parameterless constructor
 	 */
 	private MouseTrackerEntity() { super(null);	}
 	
