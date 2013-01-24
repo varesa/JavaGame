@@ -12,8 +12,21 @@ import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
 import fi.dy.esav.GameEngine.InputState;
 
+/**
+ * A entity to represent the gameover screen
+ */
+
 public class GameoverEntity extends Entity {
 
+	/**
+	 * Disabled parameterless constructor
+	 */
+	private GameoverEntity() { super(null);	}
+	
+	/**
+	 * Default constructor
+	 * @param engine reference to the GameEngine
+	 */
 	public GameoverEntity(GameEngine engine) {
 		super(engine);
 	}
@@ -21,6 +34,11 @@ public class GameoverEntity extends Entity {
 	String maintext = "Your game is over...";
 	String othertext = "Press ENTER to continue, or ESC to quit";
 
+	/**
+	 * Method to do the drawing in
+	 * overrides parent class template method
+	 * @param g Graphics instance to do the drawing on
+	 */
 	@Override
 	public void draw(Graphics g) {
 		Font font = new Font("Arial", Font.ITALIC, 50);
@@ -49,6 +67,10 @@ public class GameoverEntity extends Entity {
 				/ 2 - fm2.stringWidth(othertext) / 2, 400);
 	}
 
+	/**
+	 * Method to do the logic in
+	 * overrides parent class template method
+	 */
 	@Override
 	public void act() {
 		InputState input = engine.getInputState();
