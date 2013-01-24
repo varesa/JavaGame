@@ -10,6 +10,10 @@ import fi.dy.esav.GameEngine.GameEngine;
 import fi.dy.esav.GameEngine.Utils;
 import fi.dy.esav.JavaGame.enums.DIRECTION;
 
+/**
+ * Class for the shot bullet
+ */
+
 public class Bullet extends Entity {
 	
 	private double speed = 10;
@@ -18,20 +22,47 @@ public class Bullet extends Entity {
 	
 	Color color = Color.GRAY;
 
+	/**
+	 * Disabled parameterless constructor
+	 */
+	private Bullet() {super(null); }
+	
+	/**
+	 * Default constructor
+	 * @param engine reference to the GameEngine
+	 */
 	public Bullet(GameEngine engine) {
 		super(engine);
 	}
 	
+	/**
+	 * Constructor with the position and direction set
+	 * @param pos position to spawn the bullet at
+	 * @param direction direction the bullet will fly
+	 * @param engine reference to the GameEngine
+	 */
 	public Bullet(Point pos, DIRECTION direction, GameEngine engine) {
 		super(pos, engine);
 		this.direction = direction;
 	}
 	
+	/**
+	 * Constructor with the position and direction set up
+	 * @param x X-coordinate
+	 * @param y Y-coordinate
+	 * @param direction direction the bullet will fly
+	 * @param engine reference to the GameEngine
+	 */
 	public Bullet(double x, double y, DIRECTION direction, GameEngine engine) {
 		super(x, y, engine);
 		this.direction = direction;
 	}
 	
+	
+	/**
+	 * Method to do the logic in
+	 * overrides parent class template method
+	 */
 	@Override
 	public void act() {
 		if(this.direction == DIRECTION.LEFT) {
@@ -61,6 +92,11 @@ public class Bullet extends Entity {
 		}
 	}
 	
+	/**
+	 * Method to do the drawing
+	 * overrides parent class template method
+	 * @param g Graphics instance to draw on
+	 */
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(color);
@@ -68,6 +104,7 @@ public class Bullet extends Entity {
 	}
 	
 	/**
+	 * get the speed of the bullet
 	 * @return the speed
 	 */
 	public double getSpeed() {
@@ -75,6 +112,7 @@ public class Bullet extends Entity {
 	}
 
 	/**
+	 * set the speed of the bullet
 	 * @param speed the speed to set
 	 */
 	public void setSpeed(double speed) {
@@ -82,6 +120,7 @@ public class Bullet extends Entity {
 	}
 
 	/**
+	 * get the direction the bullet will fly
 	 * @return the direction
 	 */
 	public DIRECTION getDirection() {
@@ -89,17 +128,28 @@ public class Bullet extends Entity {
 	}
 
 	/**
+	 * set new direction
 	 * @param direction the direction to set
 	 */
 	public void setDirection(DIRECTION direction) {
 		this.direction = direction;
 	}
 	
+	/**
+	 * get the entity width
+	 * overrides parent class template method
+	 * @return entity width
+	 */
 	@Override
 	public int getWidth() {
 		return 10;
 	}
 
+	/**
+	 * get the entity height
+	 * overrides parent class template method
+	 * @return entity height
+	 */
 	public int getHeight() {
 		return 5;
 	}
