@@ -45,16 +45,16 @@ public class World {
 			engine.addEntity(e);
 		}
 		
-		Point[] jumpsUp = {new Point(85,  500),
-				           new Point(400, 500),
-						   new Point(715, 500),
+		Point[] jumpsUp = {new Point(75,  500),
+				           new Point(390, 500),
+						   new Point(705, 500),
 						   
-						   new Point(245, 380),
-						   new Point(555, 380),
+						   new Point(235, 380),
+						   new Point(545, 380),
 						   
-						   new Point(85,  250),
-				           new Point(400, 250),
-						   new Point(715, 250),};
+						   new Point(75,  250),
+				           new Point(390, 250),
+						   new Point(705, 250),};
 		for (Point point : jumpsUp) {
 			engine.addEntity(new JumpAiNode(engine, point.x, point.y, AINODE.DIR_UP));
 		}
