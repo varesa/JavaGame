@@ -37,6 +37,11 @@ public class LivingEntity extends Entity {
 	protected DIRECTION facing = DIRECTION.RIGHT;
 	
 	/**
+	 * Disabled parameterless constructor
+	 */
+	private LivingEntity() { super(null);	}
+	
+	/**
 	 * Default constructor
 	 * @param engine reference to the GameEngine
 	 */
