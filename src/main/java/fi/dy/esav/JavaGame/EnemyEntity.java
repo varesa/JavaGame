@@ -82,7 +82,7 @@ public class EnemyEntity extends LivingEntity {
 				}
 				
 				if (node != null) {
-					if (Utils.getXDistanceCenters(this, node) < 18) {
+					if (Utils.getXDistanceCenters(this, node) < 10) {
 						jump = true;
 					}
 				}
