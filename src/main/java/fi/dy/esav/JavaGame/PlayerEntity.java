@@ -21,6 +21,11 @@ public class PlayerEntity extends LivingEntity {
 	private long shootDelay = 500;
 
 	/**
+	 * Disabled default constructor
+	 */
+	private PlayerEntity() { super(null);	}
+	
+	/**
 	 * Default constructor
 	 * @param engine reference to the engine
 	 */
