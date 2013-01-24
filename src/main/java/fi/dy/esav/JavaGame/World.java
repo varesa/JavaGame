@@ -22,13 +22,24 @@ public class World {
 	int storyHeight;
 	int widthUnit;
 
+	/**
+	 * Disabled parameterless constructor
+	 */
+	@SuppressWarnings("unused")
+	private World() { }
+	
+	/**
+	 * Default constructor
+	 * 
+	 */
+	public World(GameEngine engine) {
+		this.engine = engine;
+	}
 	
 	/**
 	 * First time initialization of the game world
 	 */
 	public void initialize() {
-		engine = JavaGame.getEngine();
-		
 		initGround();
 		
 		Point playerSpawn = new Point(20, 100);
