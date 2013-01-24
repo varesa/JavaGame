@@ -23,7 +23,7 @@ public class JavaGame {
 		
 		while(!engine.getStage().isValid()) continue;
 		
-		world = new World();
+		world = new World(engine);
 		world.initialize();
 		
 		//engine.addEntity(new MouseTrackerEntity(engine));
