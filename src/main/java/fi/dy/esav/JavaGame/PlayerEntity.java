@@ -9,6 +9,10 @@ import fi.dy.esav.GameEngine.GameEngine;
 import fi.dy.esav.GameEngine.InputState;
 import fi.dy.esav.JavaGame.enums.DIRECTION;
 
+/**
+ * A class for the player controlled PlayerEntity
+ */
+
 public class PlayerEntity extends LivingEntity {
 
 	private Color color = Color.BLUE;
@@ -16,6 +20,10 @@ public class PlayerEntity extends LivingEntity {
 	private long canShoot;
 	private long shootDelay = 500;
 
+	/**
+	 * Default constructor
+	 * @param engine reference to the engine
+	 */
 	public PlayerEntity(GameEngine engine) {
 		super(engine);
 
@@ -25,12 +33,21 @@ public class PlayerEntity extends LivingEntity {
 		canShoot = System.currentTimeMillis();
 	}
 
+	/**
+	 * Method to draw the entity
+	 * Overrides parent class template method
+	 * @param g Instance of Graphics to draw on
+	 */
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(color);
 		g.drawRect((int) x, (int) y, width, height);
 	}
 
+	/**
+	 * Method to do the logic
+	 * Overrides parent class template method
+	 */
 	@Override
 	public void act() {
 		InputState input = engine.getInputState();
