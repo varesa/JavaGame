@@ -20,7 +20,10 @@ public class TestEntity extends Entity {
 	private double y = 500;
 	
 	
-	
+	/**
+	 * Default constructor
+	 * @param engine Reference to the engine instance
+	 */
 	public TestEntity(GameEngine engine) {
 		super(engine);
 		
@@ -28,11 +31,20 @@ public class TestEntity extends Entity {
 		System.out.println(sprite.getHeight(engine.getStage()));
 	}
 	
+	/**
+	 * Method to do the drawing in
+	 * Overrides the parent class template method
+	 * @param g Graphics instance to draw on
+	 */
 	@Override
 	public void draw(Graphics g) {
 		g.drawImage(sprite, (int) x, (int) y, sprite.getWidth(engine.getStage()), sprite.getHeight(engine.getStage()), engine.getStage());
 	}
 	
+	/**
+	 * Method to do logic in
+	 * Overrides the parent class template method
+	 */
 	@Override
 	public void act() {
 		if(this.engine.getInputState().isKeyDown(KeyEvent.VK_LEFT)) {
