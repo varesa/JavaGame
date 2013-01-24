@@ -8,6 +8,10 @@ import fi.dy.esav.GameEngine.GameEngine;
 import fi.dy.esav.GameEngine.Utils;
 import fi.dy.esav.JavaGame.enums.AINODE;
 
+/**
+ * Class for the basic enemy
+ */
+
 public class EnemyEntity extends LivingEntity {
 
 	private Color color = Color.RED;
@@ -28,6 +32,15 @@ public class EnemyEntity extends LivingEntity {
 
 	private boolean ai = true;
 
+	/**
+	 * Disabled parameterless constructor
+	 */
+	private EnemyEntity() {super(null); }
+	
+	/**
+	 * Default constructor
+	 * @param engine reference to the engine
+	 */
 	public EnemyEntity(GameEngine engine) {
 		super(engine);
 
@@ -41,6 +54,10 @@ public class EnemyEntity extends LivingEntity {
 		startTime = System.currentTimeMillis() + spawnTime;
 	}
 
+	/**
+	 * Method to do the logic in
+	 * overrides parent class template method
+	 */
 	@Override
 	public void act() {
 		if (System.currentTimeMillis() < startTime) {
@@ -103,6 +120,11 @@ public class EnemyEntity extends LivingEntity {
 
 	}
 
+	/**
+	 * private function to find the closest node for navigating
+	 * @param direction we want to travel
+	 * @return closest node
+	 */
 	private JumpAiNode findNode(AINODE direction) {
 
 		int dist = -1;
@@ -123,6 +145,10 @@ public class EnemyEntity extends LivingEntity {
 		return closestNode;
 	}
 
+	/**
+	 * Damage the Entity
+	 * @param damage amount of damage to be applied
+	 */
 	public void damage(double damage) {
 		if (System.currentTimeMillis() > startTime) {
 			if (damage > hitpoints) {
@@ -136,6 +162,11 @@ public class EnemyEntity extends LivingEntity {
 		}
 	}
 
+	/**
+	 * Method to do the drawing in
+	 * overrides parent class template method 
+	 * @param g Graphics to draw on
+	 */
 	@Override
 	public void draw(Graphics g) {
 		if (System.currentTimeMillis() < startTime) {
