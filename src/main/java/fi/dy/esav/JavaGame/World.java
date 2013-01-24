@@ -8,6 +8,9 @@ import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
 import fi.dy.esav.JavaGame.enums.AINODE;
 
+/**
+ * An instance to store the all the world objects in and manage it
+ */
 public class World {
 	
 	private GameEngine engine;
