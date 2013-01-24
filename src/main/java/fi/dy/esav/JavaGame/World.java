@@ -19,6 +19,10 @@ public class World {
 	int storyHeight;
 	int widthUnit;
 
+	
+	/**
+	 * First time initialization of the game world
+	 */
 	public void initialize() {
 		engine = JavaGame.getEngine();
 		
@@ -65,6 +69,9 @@ public class World {
 		
 	}
 	
+	/**
+	 * Initialise the stage ground and borders
+	 */
 	private void initGround() {
 		int stageWidth = engine.getStage().getContentPane().getWidth();
 		int stageHeight = engine.getStage().getContentPane().getHeight();
@@ -93,6 +100,10 @@ public class World {
 		}
 	}
 	
+	
+	/**
+	 * Remove everything in game
+	 */
 	public void clear() {
 		for (Entity ent : engine.getEntities()) {
 			if (ent instanceof EntitySpawner) {
@@ -102,6 +113,9 @@ public class World {
 		}
 	}
 	
+	/**
+	 * Make "game over"
+	 */
 	public void gameOver() {
 		
 		score.stopCounting();
@@ -127,6 +141,9 @@ public class World {
 		engine.stop();*/
 	}
 	
+	/**
+	 * Reinitialize the game ("restart")
+	 */
 	public void reinitialize() {		
 		clear();
 		try {
@@ -138,12 +155,18 @@ public class World {
 		initialize();
 	}
 	
+	/**
+	 * Get the "building story" a entity is in 
+	 * @param ent The entity to get the story for
+	 * @return the story the entity is in
+	 */
 	public int getStory(Entity ent) {
 		int entCenter = (int) (ent.getY());
 		return (int) (3 - Math.floor(entCenter/storyHeight));
 	}
 
 	/**
+	 * Get the player
 	 * @return the player
 	 */
 	public PlayerEntity getPlayer() {
@@ -151,6 +174,7 @@ public class World {
 	}
 
 	/**
+	 * Set the player
 	 * @param player the player to set
 	 */
 	public void setPlayer(PlayerEntity player) {
@@ -158,6 +182,7 @@ public class World {
 	}
 
 	/**
+	 * Get the score
 	 * @return the score
 	 */
 	public Score getScore() {
@@ -165,6 +190,7 @@ public class World {
 	}
 
 	/**
+	 * Set the score
 	 * @param score the score to set
 	 */
 	public void setScore(Score score) {
