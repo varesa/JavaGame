@@ -78,7 +78,6 @@ public class EnemyEntity extends LivingEntity {
 						xtarget = player.getX() - this.getX();
 					} else {
 						xtarget = node.getX() - (this.getX() + this.getWidth()/2);
-						System.out.println("xtarget: " + xtarget);
 					}
 				} else if (target < 0) {
 					node = findNode(AINODE.DIR_DOWN);
@@ -93,7 +92,6 @@ public class EnemyEntity extends LivingEntity {
 				}
 
 				try {
-					System.out.println(Utils.getXDistanceCenters(this, node));
 				} catch (NullPointerException e) {
 					System.out.println("no node");
 				}
