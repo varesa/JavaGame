@@ -139,7 +139,7 @@ public class World {
 	}
 	
 	public int getStory(Entity ent) {
-		int entCenter = (int) (ent.getY());// + ent.getHeight()/2);
+		int entCenter = (int) (ent.getY());
 		return (int) (3 - Math.floor(entCenter/storyHeight));
 	}
 
