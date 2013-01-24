@@ -19,6 +19,10 @@ public class TestEntity extends Entity {
 	private double x = 0;
 	private double y = 500;
 	
+	/**
+	 * Disabled default constructor
+	 */
+	private TestEntity() { super(null);	}
 	
 	/**
 	 * Default constructor
