@@ -59,7 +59,7 @@
 		<dependency>
 			<groupId>fi.dy.esav</groupId>
 			<artifactId>GameEngine</artifactId>
-			<version>1.0.10</version>
+			<version>1.0.12</version>
 		</dependency>
 	</dependencies>
 
