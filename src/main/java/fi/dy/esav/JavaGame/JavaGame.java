@@ -3,6 +3,10 @@ package fi.dy.esav.JavaGame;
 import fi.dy.esav.GameEngine.Entity;
 import fi.dy.esav.GameEngine.GameEngine;
 
+/**
+ * Main class for JavaGame
+ */
+
 public class JavaGame {
 	
 	private static GameEngine engine;
@@ -42,6 +46,9 @@ public class JavaGame {
 		engine.getStage().dispose();
 	}
 
+	/**
+	 * A method to shutdown and close the game
+	 */
 	public static void close() {
 		world.clear();
 		engine.stop();
@@ -49,6 +56,7 @@ public class JavaGame {
 	}
 	
 	/**
+	 * get reference to the engine
 	 * @return the engine
 	 */
 	public static GameEngine getEngine() {
@@ -56,6 +64,7 @@ public class JavaGame {
 	}
 
 	/**
+	 * set new engine
 	 * @param engine the engine to set
 	 */
 	public static void setEngine(GameEngine engine) {
@@ -63,6 +72,7 @@ public class JavaGame {
 	}
 
 	/**
+	 * get the world
 	 * @return the world
 	 */
 	public static World getWorld() {
@@ -70,12 +80,10 @@ public class JavaGame {
 	}
 
 	/**
+	 * set new world
 	 * @param world the world to set
 	 */
 	public static void setWorld(World world) {
 		JavaGame.world = world;
 	}
-	
-	
-
 }
