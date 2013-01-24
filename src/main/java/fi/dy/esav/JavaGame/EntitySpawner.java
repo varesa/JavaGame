@@ -237,9 +237,11 @@ class SpawnerThread implements Runnable {
 				// Interrupted the thread, allow it to end
 			}
 			main.setInterval(main.getInterval() - main.getIntervalDelta());
-
+			if(main.getInterval() < 500) {
+				main.setInterval(500);
+				main.setIntervalDelta(0);
+			}
 		}
-
 	}
 
 	/**
