@@ -12,8 +12,8 @@ public class EnemyEntity extends LivingEntity {
 
 	private Color color = Color.RED;
 
-	protected final double xacc = 0.5;
-	protected final double xdec = 0.5;
+	protected final double xacc = 0.3;
+	protected final double xdec = 1;
 	protected final double maxxvel = 6;
 
 	private int hitpoints = 30;
@@ -60,22 +60,29 @@ public class EnemyEntity extends LivingEntity {
 					if (node == null) {
 						xtarget = player.getX() - this.getX();
 					} else {
-						xtarget = node.getX() - this.getX();
+						xtarget = node.getX() - (this.getX() + this.getWidth()/2);
+						System.out.println("xtarget: " + xtarget);
 					}
 				} else if (target < 0) {
 					node = findNode(AINODE.DIR_DOWN);
 					if (node == null) {
 						xtarget = player.getX() - this.getX();
 					} else {
-						xtarget = node.getX() - this.getX();
+						xtarget = node.getX() - (this.getX() + this.getWidth()/2);
 					}
 
 				} else {
 					xtarget = player.getX() - this.getX();
 				}
 
+				try {
+					System.out.println(Utils.getXDistanceCenters(this, node));
+				} catch (NullPointerException e) {
+					System.out.println("no node");
+				}
+				
 				if (node != null) {
-					if (Utils.getXDistanceCenters(this, node) < 10) {
+					if (Utils.getXDistanceCenters(this, node) < 18) {
 						jump = true;
 					}
 				}
